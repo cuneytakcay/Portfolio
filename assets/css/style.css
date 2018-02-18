@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	font-size: 20px;
+}
+
+body {
+	background-color: #000;
+	background-image: linear-gradient(45deg, rgba(50, 0, 0, 0.6), rgba(0, 0, 0, 1)), url('../img/background-img.jpeg');
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 170%;
+	letter-spacing: 2px;
+	line-height: 200%;
+	color: #7f0000;
+	opacity: 0.8;
+}
+
+p {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 100%;
+	letter-spacing: 1px;
+	line-height: 140%;
+	color: #a6a6a6;
+	opacity: 0.8
+}
+
+.tagline {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.tagline-opaque {
+	opacity: 0.1;
+}
+
+.chev-div {
+	max-width: 3%;
+	position: absolute;
+	left: 80%;
+	top: 5%;
+	text-align: center;
+}
+
+.chevron {
+	max-width: 100%;
+	margin-bottom: -50px;
+	opacity: 0.2;
+}
+
+.paused {
+	visibility: hidden;
+}
+
+/*.chev-anim { 
+	max-width: 100%;
+	margin-bottom: -50px;
+	opacity: 1; 
+}*/
+
+#menu-btn {
+	border: none;
+	border-radius: 50%;
+	background-color: #7f0000;
+	opacity: 0.3;
+	width: 20px;
+	height: 20px;	
+	cursor: pointer;
+	margin-top: 50px;
+}
