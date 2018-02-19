@@ -16,8 +16,8 @@ var btnClicked = false;
 
 $('#menu-btn').on('mouseenter', function() {
 	if (!btnClicked) {
-		$('.chevron').addClass('paused', 'slow');
-		$('.tagline').addClass('tagline-opaque', 'slow');
+		$('.chevron').addClass('paused');
+		$('.tagline').addClass('tagline-opaque');
 		pulsate({
 			color: '#fff',
 			size: 75,
@@ -27,30 +27,40 @@ $('#menu-btn').on('mouseenter', function() {
 			top: 50,
 			zIndex: -1
 		});
-		$('#horizontal').removeClass('line undraw-line').addClass('line draw-line');
-		$('#vertical').removeClass('line undraw-line').addClass('line draw-line');
+		$('#horizontal').removeClass('line undraw-right').addClass('line draw-right');
+		$('#vertical').removeClass('line undraw-right').addClass('line draw-right');
+		$('#diagonal-long').removeClass('line undraw-long').addClass('line draw-long');
+		$('#diagonal-short').removeClass('line undraw-short').addClass('line draw-short');
 	}
 });
 
 $('#menu-btn').on('mouseleave', function() {
 	if (!btnClicked) {
-		setTimeout(function() {
-			$('.chevron').removeClass('paused', 'slow');
-			$('.tagline').removeClass('tagline-opaque', 'slow');
-		}, 2000);
+		$('.chevron').removeClass('paused');
+		$('.tagline').removeClass('tagline-opaque');
 		pulsate('disable');
-		$('#horizontal').removeClass('line draw-line').addClass('line undraw-line');
-		$('#vertical').removeClass('line draw-line').addClass('line undraw-line');
+		$('#horizontal').removeClass('line draw-right').addClass('line undraw-right');
+		$('#vertical').removeClass('line draw-right').addClass('line undraw-right');
+		$('#diagonal-long').removeClass('line draw-long').addClass('line undraw-long');
+		$('#diagonal-short').removeClass('line draw-short').addClass('line undraw-short');
 	}
 });
 
 $('#menu-btn').on('click', function() {
 	if (!btnClicked) {
 		btnClicked = true;
-		$('#horizontal').removeClass('draw-line undraw-line').addClass('line');
-		$('#vertical').removeClass('draw-line undraw-line').addClass('line');
+		$('#menu-btn').css('opacity', '1');
+		$('.chevron').addClass('paused');
+		$('.tagline').addClass('tagline-opaque');
+		$('#horizontal').removeClass('draw-right undraw-right').addClass('line');
+		$('#vertical').removeClass('draw-right undraw-right').addClass('line');
+		$('#diagonal-long').removeClass('draw-long undraw-long').addClass('line');
+		$('#diagonal-short').removeClass('draw-short undraw-short').addClass('line');
 	} else {
 		btnClicked = false;
+		$('#menu-btn').css('opacity', '0.3');
+		$('.chevron').removeClass('paused');
+		$('.tagline').removeClass('tagline-opaque');
 	}
 });
 
