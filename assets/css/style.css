@@ -9,7 +9,7 @@ html, body {
 
 body {
 	background-color: #000;
-	background-image: linear-gradient(45deg, rgba(50, 0, 0, 0.6), rgba(0, 0, 0, 1)), url('../img/background-img.jpeg');
+	background-image: linear-gradient(45deg, rgba(0, 20, 80, 0.6), rgba(0, 50, 0, 1)), url('../img/background-img.jpeg');
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
@@ -19,9 +19,19 @@ h1 {
 	font-family: 'Raleway', sans-serif;
 	font-size: 170%;
 	letter-spacing: 2px;
-	line-height: 200%;
 	color: #7f0000;
-	opacity: 0.8;
+}
+
+h2 {
+	//font-family: 'Righteous', cursive;
+	//font-family: 'Special Elite', cursive;
+	font-family: 'Prosto One', cursive;
+	font-size: 100%;
+	position: relative;
+	color: #fff;
+	text-shadow: 0 0 5px #f00;
+	top: -107px;
+	left: 95px;
 }
 
 p {
@@ -30,7 +40,6 @@ p {
 	letter-spacing: 1px;
 	line-height: 140%;
 	color: #a6a6a6;
-	opacity: 0.8
 }
 
 .tagline {
@@ -38,11 +47,11 @@ p {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	transition: opacity 2s;
+	transition: opacity 0.7s ease-in;
 }
 
 .tagline-opaque {
-	opacity: 0.1;
+	opacity: 0;
 }
 
 .chev-div {
@@ -60,7 +69,7 @@ p {
 	opacity: 0.2;
 }
 
-.paused {
+.hide {
 	visibility: hidden;
 }
 
@@ -81,106 +90,145 @@ p {
 	margin-top: 50px;
 }
 
-#menu-btn:hover {
-	opacity: 1;
-}
-
 #menu-btn:focus {
 	outline: 0;
 }
 
 /*------------------------------------------------------------*/
-/*------------------ Animated Lines --------------------------*/
+/*------------------ Animated Beams --------------------------*/
 /*------------------------------------------------------------*/
-.line {
+.line-title {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 1.5s;
+}
+
+.lines {
 	position: absolute;
 	top: 23%; 
 	right: 12%;
-	border-radius: 5px;
+	height: 3px;
 	background-color: #fff;
-	box-shadow: 0 0 50px 5px #f44;
+	box-shadow: 0 0 50px 5px #f00;
+	transform-origin: right top;
 	z-index: -2;
 }
 
-.draw-right {
-	animation: drawRight 1.5s linear forwards;
+#top-line {
+	width: 40%;
+	transform: rotate(0deg);
 }
 
-.draw-long {
-	animation: drawLong 1.5s linear forwards;
+#mid-line {
+	width: 65%;
+	transform: rotate(-20deg);
 }
 
-.draw-short {
-	animation: drawShort 1.5s linear forwards;
-}
-
-.undraw-right {
-	animation: undrawRight 1.5s linear forwards;
-}
-
-.undraw-long {
-	animation: undrawLong 1.5s linear forwards;
-}
-
-.undraw-short {
-	animation: undrawShort 1.5s linear forwards;
-}
-
-#horizontal {
-	width: 75%;
-	height: 5px;
-	transform-origin: right top;
-}
-
-#vertical {
-	width: 5px;
-	height: 50%;
-	transform-origin: right top;
-}
-
-#diagonal-long {
-	width: 50%;
-	height: 5px;
-	transform-origin: right top;
-	transform: rotate(-15deg);
-}
-
-#diagonal-short {
+#bot-line {
 	width: 30%;
-	height: 5px;
-	transform-origin: right top;
-	transform: rotate(-45deg);
+	transform: rotate(-50deg);
 }
 
-@keyframes drawRight {
-	0% { transform: scale(0); opacity: 0; }
+.draw-top {
+	animation: drawTop 0.5s linear forwards;
+}
+
+.draw-mid {
+	animation: drawMid 0.5s linear forwards;
+}
+
+.draw-bot {
+	animation: drawBot 0.5s linear forwards;
+}
+
+.undraw-top {
+	animation: undrawTop 0.5s linear 0.5s forwards;
+}
+
+.undraw-mid {
+	animation: undrawMid 0.5s linear 0.5s forwards;
+}
+
+.undraw-bot {
+	animation: undrawBot 0.5s linear 0.5s forwards;
+}
+
+@keyframes drawTop {
+	0% { transform: scale(0) rotate(0deg);; opacity: 0; }
+	100% { transform: scale(1) rotate(0deg);; opacity: 1; }
+}
+
+@keyframes drawMid {
+	0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+	100% { transform: scale(1) rotate(-20deg); opacity: 1; }
+}
+
+@keyframes drawBot {
+	0% { transform: scale(0) rotate(-50deg); opacity: 0; }
+	100% { transform: scale(1) rotate(-50deg); opacity: 1; }
+}
+
+@keyframes undrawTop {
+	0% { transform: scale(1) rotate(0deg); opacity: 1; }
+	100% { transform: scale(0) rotate(0deg); opacity: 0; }
+}
+
+@keyframes undrawMid {
+	0% { transform: scale(1) rotate(-20deg); opacity: 1; }
+	100% { transform: scale(0) rotate(-20deg); opacity: 0; }
+}
+
+@keyframes undrawBot {
+	0% { transform: scale(1) rotate(-50deg); opacity: 1; }
+	100% { transform: scale(0) rotate(-50deg); opacity: 0; }
+}
+
+/*------------------------------------------------------------*/
+/*---------------------- LINKS -------------------------------*/
+/*------------------------------------------------------------*/
+.links {
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 50px 5px #f00;
+	border-radius: 50%;
+	border: 3px solid #fff;
+	background-size: cover;
+	background-position: center;
+	background-color: #fff;
+	z-index: 2;
+	opacity: 0;
+}
+
+#portfolio {
+	background-image: url('../img/portfolio-img.jpeg');
+}
+
+#blog {
+	background-image: url('../img/blog-img.jpeg');
+}
+
+#about-me {
+	background-image: url('../img/about-me.jpg');
+}
+
+.open-links {
+	margin-top: -75px;
+	margin-left: -75px;
+	animation: openLinks 0.5s linear 0.5s forwards;
+}
+
+.close-links {
+	margin-top: -75px;
+	margin-left: -75px;
+	animation: closeLinks 0.5s linear forwards;
+}
+
+@keyframes openLinks {
+	0% { transform: scale(0); opacity: 1; }
 	100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes drawLong {
-	0% { transform: scale(0) rotate(-15deg); opacity: 0; }
-	100% { transform: scale(1) rotate(-15deg); opacity: 1; }
-}
-
-@keyframes drawShort {
-	0% { transform: scale(0) rotate(-45deg); opacity: 0; }
-	100% { transform: scale(1) rotate(-45deg); opacity: 1; }
-}
-
-@keyframes undrawRight {
+@keyframes closeLinks {
 	0% { transform: scale(1); opacity: 1; }
-	100% { transform: scale(0); opacity: 0; }
+	100% { transform: scale(0); opacity: 1; }
 }
-
-@keyframes undrawLong {
-	0% { transform: scale(1) rotate(-15deg); opacity: 1; }
-	100% { transform: scale(0) rotate(-15deg); opacity: 0; }
-}
-
-@keyframes undrawShort {
-	0% { transform: scale(1) rotate(-45deg); opacity: 1; }
-	100% { transform: scale(0) rotate(-45deg); opacity: 0; }
-}
-
-/*------------------------------------------------------------*/
-/*------------------------------------------------------------*/
