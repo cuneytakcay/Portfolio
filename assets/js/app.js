@@ -15,7 +15,7 @@ function openLinks() {
 	$('#mid-line').removeClass('undraw-mid lines').addClass('draw-mid lines');
 	$('#bot-line').removeClass('undraw-bot lines').addClass('draw-bot lines');
 	$('#portfolio, #blog, #about-me').removeClass('close-links links').addClass('open-links links');
-	$('.line-title').css('opacity', '1');
+	$('.line-title').css({'visibility': 'visible', 'opacity': '1'});
 } 
 
 function closeLinks() {
@@ -26,7 +26,7 @@ function closeLinks() {
 	$('#mid-line').removeClass('draw-mid lines').addClass('undraw-mid lines');
 	$('#bot-line').removeClass('draw-bot lines').addClass('undraw-bot lines');
 	$('#portfolio, #blog, #about-me').removeClass('open-links links').addClass('close-links links');
-	$('.line-title').css('opacity', '0');
+	$('.line-title').css({'visibility': 'hidden', 'opacity': '0'});
 }
 
 $('#menu-btn').on('mouseenter', function() {

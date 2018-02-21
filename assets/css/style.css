@@ -98,9 +98,10 @@ p {
 /*------------------ Animated Beams --------------------------*/
 /*------------------------------------------------------------*/
 .line-title {
+	visibility: hidden;
 	opacity: 0;
-	transition-property: opacity;
-	transition-duration: 1.5s;
+	transition-property: visibility;
+	transition-duration: 1s;
 }
 
 .lines {
