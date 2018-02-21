@@ -88,9 +88,9 @@ setTimeout(animateChevron, 100);
 // ------------------------------------------------- //
 // ----- Water ripple effect on the main page. ----- //
 // ------------------------------------------------- //
-$('body').ripples({
-	imgUrl: null,
-	resolution: 500,
-	dropRadius: 10,
-	perturbance: 0.05,
-});
+// $('body').ripples({
+// 	imgUrl: null,
+// 	resolution: 500,
+// 	dropRadius: 10,
+// 	perturbance: 0.05,
+// });
