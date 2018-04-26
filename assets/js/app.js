@@ -1,15 +1,15 @@
-var btnClicked = false;
+let btnClicked = false;
 
-// ------------------------------------------------- //
-// ------- jPulse & Links opening animations ------- //
-// ------------------------------------------------- //
-function pulsate(cond) {
+/* ================================================= */
+/* ======= jPulse & Links opening animations ======= */
+/* ================================================= */
+
+const pulsate = cond => {
 	$('#menu-btn').jPulse(cond);
 }
 
-function openLinks() {
-	$('#menu-btn').css('opacity', '1');
-	$('.chevron').addClass('hide');
+const openLinks = () => {
+	$('#chevron').addClass('hide');
 	$('.tagline').css('opacity', '0');
 	$('#top-line').removeClass('undraw-top lines').addClass('draw-top lines');
 	$('#mid-line').removeClass('undraw-mid lines').addClass('draw-mid lines');
@@ -18,9 +18,8 @@ function openLinks() {
 	$('.line-title').css({'visibility': 'visible', 'opacity': '1'});
 } 
 
-function closeLinks() {
-	$('#menu-btn').css('opacity', '0.3');
-	$('.chevron').removeClass('hide');
+const closeLinks = () => {
+	$('#chevron').removeClass('hide');
 	$('.tagline').css('opacity', '1');
 	$('#top-line').removeClass('draw-top lines').addClass('undraw-top lines');
 	$('#mid-line').removeClass('draw-mid lines').addClass('undraw-mid lines');
@@ -29,29 +28,29 @@ function closeLinks() {
 	$('.line-title').css({'visibility': 'hidden', 'opacity': '0'});
 }
 
-$('#menu-btn').on('mouseenter', function() {
+$('#menu-btn').on('mouseenter',() => {
 	if (!btnClicked) {
 		pulsate({
 			color: '#fff',
-			size: 120,
-			speed: 2000,
-			interval: 400,
+			size: 75,
+			speed: 3000,
+			interval: 300,
 			left: 0,
-			top: 50,
+			top: 0,
 			zIndex: -1
 		});
 		openLinks();
 	}
 });
 
-$('#menu-btn').on('mouseleave', function() {
+$('#menu-btn').on('mouseleave',() => {
 	if (!btnClicked) {
 		pulsate('disable');
 		closeLinks();
 	}
 });
 
-$('#menu-btn').on('click', function() {
+$('#menu-btn').on('click',() => {
 	if (!btnClicked) {
 		btnClicked = true;
 		openLinks();
@@ -60,40 +59,3 @@ $('#menu-btn').on('click', function() {
 		closeLinks();
 	}
 });
-
-// ------------------------------------------------- //
-// ----------- Animating chevron effects ----------- //
-// ------------------------------------------------- //
-var animateChevron = function() {
-	clearTimeout(animateChevron);
-
-	setTimeout(function() {
-		$('#top-chev').animate({ opacity: 1 });
-	}, 400);
-	setTimeout(function() {
-		$('#mid-chev').animate({ opacity: 1 });
-	}, 800);
-	setTimeout(function() {
-		$('#bot-chev').animate({ opacity: 1 });
-	}, 1200);
-	setTimeout(function() {
-		$('.chevron').animate({ opacity: 0.3 });
-	}, 1600);
-	
-	setTimeout(animateChevron, 1600);
-}
-
-setTimeout(animateChevron, 100);
-
-// ------------------------------------------------- //
-// ----- Water ripple effect on the main page. ----- //
-// ------------------------------------------------- //
-// $('body').ripples({
-// 	imgUrl: null,
-// 	resolution: 500,
-// 	dropRadius: 10,
-// 	perturbance: 0.05,
-// });
-
-
-////////////////////////////////////////////////////////////////////
