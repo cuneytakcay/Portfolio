@@ -67,7 +67,7 @@ a {
 	transform: translate(-50%, -50%);
 	transition: opacity 0.6s ease-in;
 	cursor: default;
-	z-index: -2;
+	z-index: -20;
 }
 
 /* Determines where chevron and menu button will be located */
