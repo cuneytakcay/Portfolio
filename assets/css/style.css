@@ -1,6 +1,7 @@
 /* ================================================= */
 /* ================= Common Specs ================== */
 /* ================================================= */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,7 +13,7 @@ html, body {
 
 body {
 	background-color: #000;
-	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('../img/dark-bg.png');
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../img/dark-bg.png');
 	height: 100vh;
 }
 
@@ -24,15 +25,12 @@ h1 {
 }
 
 h2 {
-	//font-family: 'Righteous', cursive;
-	//font-family: 'Special Elite', cursive;
+	/*font-family: 'Righteous', cursive;*/
+	/*font-family: 'Special Elite', cursive;*/
 	font-family: 'Prosto One', cursive;
 	font-size: 100%;
-	position: relative;
 	color: #fff;
 	text-shadow: 0 0 5px #f00;
-	top: -107px;
-	left: 95px;
 }
 
 p {
@@ -43,57 +41,46 @@ p {
 	color: #a6a6a6;
 }
 
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
 /* ================================================= */
 /* ================= Main Content ================== */
 /* ================================================= */
 
+.container {
+	/*border: 1px solid green;*/
+	width: 70%;
+	height: 430px;
+	position: relative;
+	left: 50%;
+  top: 150px;
+  transform: translate(-50%);
+}
+
 .tagline {
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 40%;
 	transform: translate(-50%, -50%);
-	transition: opacity 0.7s ease-in;
+	transition: opacity 0.6s ease-in;
+	cursor: default;
+	z-index: -2;
 }
-
-.tagline-opaque {
-	opacity: 0;
-}
-
-/* ================================================= */
-/* ============ Chevron and Menu Button ============ */
-/* ================================================= */
 
 /* Determines where chevron and menu button will be located */
 .menu-div {
 	width: 4%;
 	position: absolute;
-	right: 10%;
+	right: calc(-2% + 3px);
 	text-align: center;
-}
-
-/* Chevron specs and animation */
-#chevron {
-	bottom: 77%;
-	font-size: 200%;
-	transform: rotate(90deg);
-	text-shadow: 0 0 15px red;
-	opacity: 0;
-	margin-bottom: 30px;
-	animation: chevron 1s linear infinite;
-}
-
-@keyframes chevron {
-	from { opacity: 0; margin-bottom: 30px; }
-	to { opacity: 1; margin-bottom: 0; }
-}
-
-.hide {
-	visibility: hidden;
 }
 
 /* Menu button specs */
 #menu-btn-div {
-	bottom: 75%;
+	top: -8px;
 }
 
 #menu-btn {
@@ -104,159 +91,200 @@ p {
 	width: 20px;
 	height: 20px;	
 	cursor: pointer;
-	
-}
-
-#menu-btn:hover {
-	opacity: 1;
+	z-index: 10;
 }
 
 #menu-btn:focus {
 	outline: 0;
 }
 
+/* Chevron specs and animation */
+#chevron {
+	font-size: 200%;
+	transform: rotate(90deg);
+	text-shadow: 0 0 15px #f00;
+	top: -90px;
+	animation: chevron 1s linear infinite;
+}
+
+@keyframes chevron {
+	from { opacity: 0; top: -90px; }
+	to { opacity: 1; top: -60px; }
+}
+
+.hide {
+	/*display: none;*/
+	visibility: hidden;
+}
+
 /* ================================================= */
 /* ================ Animated Beams ================= */
 /* ================================================= */
 
-.line-title {
-	visibility: hidden;
-	opacity: 0;
-	transition-property: visibility;
-	transition-duration: 1s;
+.beam {
 	display: inline-block;
-}
-
-.lines {
-	position: absolute;
-	top: 23%; 
-	right: 12%;
-	height: 3px;
+	border-radius: 5px;
 	background-color: #fff;
 	box-shadow: 0 0 50px 5px #f00;
-	transform-origin: right top;
-	z-index: -2;
+	position: absolute;
+	right: 0;
+	z-index: -10;
 }
 
-#top-line {
-	width: 40%;
-	transform: rotate(0deg);
+#rod {
+	width: 5px;	
+	height: 0;
+	transform-origin: center top;
 }
 
-#mid-line {
-	width: 65%;
-	transform: rotate(-20deg);
+#top-bar {
+	width: 0;
+	height: 5px;
+	transform-origin: center right;
 }
 
-#bot-line {
-	width: 30%;
-	transform: rotate(-50deg);
+#mid-bar {
+	width: 0;
+	height: 5px;
+	top: 210px;
+	transform-origin: center right;
+}
+
+#bottom-bar {
+	width: 0;
+	height: 5px;
+	top: 425px;
+	transform-origin: center right;
+}
+
+/* Animations */
+.draw-rod {
+	animation: drawRod 0.6s linear forwards;
 }
 
 .draw-top {
-	animation: drawTop 0.5s linear forwards;
+	animation: drawTop 1s linear forwards;
 }
 
 .draw-mid {
-	animation: drawMid 0.5s linear forwards;
+	animation: drawMid 0.7s linear 0.3s forwards;
 }
 
-.draw-bot {
-	animation: drawBot 0.5s linear forwards;
+.draw-bottom {
+	animation: drawBottom 0.4s linear 0.6s forwards;
+}
+
+.undraw-rod {
+	animation: undrawRod 0.6s linear forwards;
 }
 
 .undraw-top {
-	animation: undrawTop 0.5s linear 0.5s forwards;
+	animation: undrawTop 1s linear forwards;
 }
 
 .undraw-mid {
-	animation: undrawMid 0.5s linear 0.5s forwards;
+	animation: undrawMid 0.7s linear forwards;
 }
 
-.undraw-bot {
-	animation: undrawBot 0.5s linear 0.5s forwards;
+.undraw-bottom {
+	animation: undrawBottom 0.4s linear forwards;
+}
+
+@keyframes drawRod {
+	0% { height: 0; }
+	100% { height: 430px; }
 }
 
 @keyframes drawTop {
-	0% { transform: scale(0) rotate(0deg);; opacity: 0; }
-	100% { transform: scale(1) rotate(0deg);; opacity: 1; }
+	0% { width: 0; }
+	100% { width: 75%; }
 }
 
 @keyframes drawMid {
-	0% { transform: scale(0) rotate(-20deg); opacity: 0; }
-	100% { transform: scale(1) rotate(-20deg); opacity: 1; }
+	0% { width: 0; }
+	100% { width: 50%; }
 }
 
-@keyframes drawBot {
-	0% { transform: scale(0) rotate(-50deg); opacity: 0; }
-	100% { transform: scale(1) rotate(-50deg); opacity: 1; }
+@keyframes drawBottom {
+	0% { width: 0; }
+	100% { width: 25%; }
+}
+
+@keyframes undrawRod {
+	0% { height: 430px; }
+	100% { height: 0; }
 }
 
 @keyframes undrawTop {
-	0% { transform: scale(1) rotate(0deg); opacity: 1; }
-	100% { transform: scale(0) rotate(0deg); opacity: 0; }
+	0% { width: 75%; }
+	100% { width: 0; }
 }
 
 @keyframes undrawMid {
-	0% { transform: scale(1) rotate(-20deg); opacity: 1; }
-	100% { transform: scale(0) rotate(-20deg); opacity: 0; }
+	0% { width: 50%; }
+	100% { width: 0; }
 }
 
-@keyframes undrawBot {
-	0% { transform: scale(1) rotate(-50deg); opacity: 1; }
-	100% { transform: scale(0) rotate(-50deg); opacity: 0; }
+@keyframes undrawBottom {
+	0% { width: 25%; }
+	100% { width: 0; }
 }
 
 /* ================================================= */
-/* ===================== Links ===================== */
+/* ================= Animated Links ================ */
 /* ================================================= */
 
-.links {
-	width: 150px;
-	height: 150px;
-	box-shadow: 0 0 50px 5px #f00;
-	border-radius: 50%;
-	border: 3px solid #fff;
-	background-size: cover;
-	background-position: center;
-	background-color: #fff;
-	z-index: 2;
+.title {
+	display: inline-block;
+	position: absolute;
+	bottom: 15px;
+	left: 100px;
 	opacity: 0;
 }
 
+.link {
+	display: inline-block;
+	background-size: cover;
+	background-position: center;
+	background-color: #fff;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	box-shadow: 0 0 50px 5px #f00;
+	margin-top: -78px;
+	margin-left: -80px;
+	opacity: 0;
+	z-index: 10;
+}
+
 #portfolio {
-	background-image: url('../img/portfolio-img.jpeg');
-	cursor: pointer;
+	background-image: url('../img/portfolio.jpeg');
 }
 
-#blog {
-	background-image: url('../img/blog-img.jpeg');
-	cursor: pointer;
-}
-
-#about-me {
+#about {
 	background-image: url('../img/about-me.jpg');
-	cursor: pointer;
 }
 
-.open-links {
-	margin-top: -75px;
-	margin-left: -75px;
-	animation: openLinks 0.5s linear 0.5s forwards;
+#contact {
+	background-image: url('../img/contact.jpg');
 }
 
-.close-links {
-	margin-top: -75px;
-	margin-left: -75px;
-	animation: closeLinks 0.5s linear forwards;
+/* Animations */
+.open-link {
+	animation: openLink 0.5s linear 1s forwards;
 }
 
-@keyframes openLinks {
+.close-link {
+	animation: closeLink 0.5s linear forwards;
+}
+
+@keyframes openLink {
 	0% { transform: scale(0); opacity: 1; }
 	100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes closeLinks {
+@keyframes closeLink {
 	0% { transform: scale(1); opacity: 1; }
 	100% { transform: scale(0); opacity: 1; }
 }
