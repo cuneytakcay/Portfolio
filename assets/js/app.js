@@ -37,6 +37,7 @@ const closeLinks = () => {
 $('#menu-btn').on('click',() => {
 	const makeOpaque = () => {
 	  $('#menu-btn').css('opacity', '0.3');
+	  $('.beam').css('opacity', '0');
 	}
 
 	if (!linksAreOpen) {
@@ -51,6 +52,7 @@ $('#menu-btn').on('click',() => {
 		});
 		openLinks();
 		$('#menu-btn').css('opacity', '1');
+		$('.beam').css('opacity', '1');
 		linksAreOpen = true;
 	} else {
 		pulsate('disable');
