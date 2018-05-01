@@ -295,13 +295,51 @@ a {
 /* ================= Media Queries ================= */
 /* ================================================= */
 
-@media screen and (max-width: 1200px) {
-	h2 {
-		font-size: 80%;
+@media screen and (max-width: 1100px) {
+	h2.title {
+		font-size: 90%;
+		bottom: 10px;
+		left: 80px;
 	}
 
   .link {
-  	width: 140px;
-		height: 140px;
+  	width: 130px;
+		height: 130px;
+		margin-top: -68px;
+		margin-left: -70px;
   }
+}
+
+@media screen and (max-width: 962px) {
+  @keyframes drawTop {
+		0% { width: 0; }
+		100% { width: 90%; }
+	}
+
+	@keyframes drawMid {
+		0% { width: 0; }
+		100% { width: 65%; }
+	}
+
+	@keyframes drawBottom {
+		0% { width: 0; }
+		100% { width: 40%; }
+	}
+}
+
+@media screen and (max-width: 640px) {
+  @keyframes drawTop {
+		0% { width: 0; }
+		100% { width: 80%; }
+	}
+
+	@keyframes drawMid {
+		0% { width: 0; }
+		100% { width: 80%; }
+	}
+
+	@keyframes drawBottom {
+		0% { width: 0; }
+		100% { width: 80%; }
+	}
 }
