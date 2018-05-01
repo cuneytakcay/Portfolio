@@ -16,7 +16,9 @@ const openLinks = () => {
 	$('#mid-bar').removeClass('undraw-mid').addClass('draw-mid');
 	$('#bottom-bar').removeClass('undraw-bottom').addClass('draw-bottom');
 	$('#portfolio, #about, #contact').removeClass('close-link').addClass('open-link link');
-	$('.title').css({'opacity': '1', 'transition-duration': '1s', 'transition-delay': '1.5s'});
+	setTimeout(() => {
+		$('.title').css('display', 'inline-block');
+	}, 1500);
 } 
 
 const closeLinks = () => {
@@ -31,7 +33,7 @@ const closeLinks = () => {
 		$('#bottom-bar').removeClass('draw-bottom').addClass('undraw-bottom');
 	}, 500);
 	$('#portfolio, #about, #contact').removeClass('open-link').addClass('close-link link');
-	$('.title').css({'opacity': '0', 'transition-duration': '0.5s', 'transition-delay': '0s'});
+	$('.title').css('display', 'none');
 }
 
 $('#menu-btn').on('click',() => {
