@@ -9,7 +9,7 @@ const pulsate = cond => {
 }
 
 const openLinks = () => {
-	$('#chevron').addClass('hide');
+	$('#arrowhead').addClass('hide');
 	$('.tagline').css('opacity', '0');
 	$('#rod').removeClass('undraw-rod').addClass('draw-rod');
 	$('#top-bar').removeClass('undraw-top').addClass('draw-top');
@@ -20,7 +20,7 @@ const openLinks = () => {
 } 
 
 const closeLinks = () => {
-	$('#chevron').removeClass('hide');
+	$('#arrowhead').removeClass('hide');
 	$('.tagline').css('opacity', '1');
 	setTimeout(() => {
 		$('#rod').addClass('undraw-rod').removeClass('draw-rod');
