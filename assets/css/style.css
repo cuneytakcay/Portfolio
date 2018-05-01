@@ -311,6 +311,14 @@ a {
 }
 
 @media screen and (max-width: 962px) {
+	h1 {
+  	font-size: 130%;
+  }
+
+  p {
+  	font-size: 90%;
+  }
+
   @keyframes drawTop {
 		0% { width: 0; }
 		100% { width: 90%; }
@@ -328,18 +336,32 @@ a {
 }
 
 @media screen and (max-width: 640px) {
+  h1 {
+  	font-size: 100%;
+  }
+
+  p {
+  	font-size: 80%;
+  }
+
+  .container {
+  	width: 90%;
+  	left: 45%;
+	  top: 100px;
+  }
+
   @keyframes drawTop {
 		0% { width: 0; }
-		100% { width: 80%; }
+		100% { width: 65%; }
 	}
 
 	@keyframes drawMid {
 		0% { width: 0; }
-		100% { width: 80%; }
+		100% { width: 65%; }
 	}
 
 	@keyframes drawBottom {
 		0% { width: 0; }
-		100% { width: 80%; }
+		100% { width: 65%; }
 	}
 }
