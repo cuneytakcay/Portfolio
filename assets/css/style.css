@@ -5,6 +5,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 html, body {
@@ -41,335 +42,81 @@ p {
 	color: #a6a6a6;
 }
 
-a {
-	text-decoration: none;
-	color: #fff;
-}
-
 /* ================================================= */
 /* ================= Main Content ================== */
 /* ================================================= */
 
 .container {
 	display: inline-block;
-	width: 70%;
-	height: 430px;
+	width: 90%;
+	height: 550px;
 	position: relative;
+	top: 100px;
 	left: 50%;
-  top: 150px;
   transform: translate(-50%);
 }
 
 .tagline {
 	position: absolute;
-	width: 90%;
+	padding-bottom: 10px;
+	width: 60%;
 	top: 50%;
-	left: 50%;
+	left: 40%;
 	transform: translate(-50%, -50%);
 	transition: opacity 0.6s ease-in;
 	cursor: default;
 	z-index: -20;
 }
 
-/* Menu button and arrow div */
-.menu-div {
-	display: inline-block;
-	text-align: center;
-	position: absolute;
-	right: -7px;
-	top: -7px;
+.links {
+	position: relative;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	width: 90%;
+	text-align: right;
 }
 
-/* Menu button specs */
-#menu-btn {
-	border: none;
-	border-radius: 50%;
-	background-color: #fff;
-	opacity: 0.5;
-	width: 20px;
-	height: 20px;	
-	cursor: pointer;
-	z-index: 10;
-}
-
-#menu-btn:focus {
-	outline: 0;
-}
-
-#menu-btn:hover {
-	opacity: 1;
-}
-
-/* Arrowhead specs and animation */
-#arrowhead {
-	position: absolute;
-	left: 50%;
-	top: -50px;
-  transform: translate(-50%);
-	animation: arrowhead 1s linear infinite;
-}
-
-#arrowhead>p {
-	font-size: 40px;
-	letter-spacing: 0;
-	line-height: 0;
-	transform: rotate(90deg);
-	text-shadow: 0 0 15px #f00;
-}
-
-@keyframes arrowhead {
-	from { opacity: 0; top: -50px; }
-	to { opacity: 1; top: -20px; }
-}
-
-.hide {
-	visibility: hidden;
-}
-
-/* ================================================= */
-/* ================ Animated Beams ================= */
-/* ================================================= */
-
-.beam {
-	display: inline-block;
-	border-radius: 5px;
-	background-color: #fff;
-	box-shadow: 0 0 50px 5px #f00;
-	position: absolute;
-	right: 0;
-	opacity: 0;
-	z-index: -10;
-}
-
-#rod {
-	width: 5px;	
-	height: 0;
-	transform-origin: center top;
-}
-
-#top-bar {
-	width: 0;
-	height: 5px;
-	transform-origin: center right;
-}
-
-#mid-bar {
-	width: 0;
-	height: 5px;
-	top: 210px;
-	transform-origin: center right;
-}
-
-#bottom-bar {
-	width: 0;
-	height: 5px;
-	top: 425px;
-	transform-origin: center right;
-}
-
-/* Animations */
-.draw-rod {
-	animation: drawRod 0.6s linear forwards;
-}
-
-.draw-top {
-	animation: drawTop 1s linear forwards;
-}
-
-.draw-mid {
-	animation: drawMid 0.7s linear 0.3s forwards;
-}
-
-.draw-bottom {
-	animation: drawBottom 0.4s linear 0.6s forwards;
-}
-
-.undraw-rod {
-	animation: undrawRod 0.6s linear forwards;
-}
-
-.undraw-top {
-	animation: undrawTop 1s linear forwards;
-}
-
-.undraw-mid {
-	animation: undrawMid 0.7s linear forwards;
-}
-
-.undraw-bottom {
-	animation: undrawBottom 0.4s linear forwards;
-}
-
-@keyframes drawRod {
-	0% { height: 0; }
-	100% { height: 430px; }
-}
-
-@keyframes drawTop {
-	0% { width: 0; }
-	100% { width: 81%; }
-}
-
-@keyframes drawMid {
-	0% { width: 0; }
-	100% { width: 54%; }
-}
-
-@keyframes drawBottom {
-	0% { width: 0; }
-	100% { width: 27%; }
-}
-
-@keyframes undrawRod {
-	0% { height: 430px; }
-	100% { height: 0; }
-}
-
-@keyframes undrawTop {
-	0% { width: 75%; }
-	100% { width: 0; }
-}
-
-@keyframes undrawMid {
-	0% { width: 50%; }
-	100% { width: 0; }
-}
-
-@keyframes undrawBottom {
-	0% { width: 25%; }
-	100% { width: 0; }
-}
-
-/* ================================================= */
-/* ================= Animated Links ================ */
-/* ================================================= */
-
-.title {
-	display: none;
-	position: absolute;
-	bottom: 15px;
-	left: 100px;
-}
+#h2-portfolio { margin:0 0 5px 0; }
+#h2-about-me, 
+#h2-contact { margin: 50px 0 5px 0; }
 
 .link {
-	display: inline-block;
-	background-size: cover;
-	background-position: center;
-	background-color: #fff;
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	border: 5px solid #fff;
+	text-decoration: none;
+	color: #fff;
+	opacity: 0.6;
+}
+
+.link:hover,
+.link:active {
+	opacity: 1;
+	text-shadow: 0 0 30px #fff;
+}
+
+.link:focus { outline: none; }
+
+/* Beam Animation */
+.beam {
+	position: absolute;
+	right: 0;
+	width: 0;
+	height: 3px;
+	border-radius: 5px;
+	background: #fff;
 	box-shadow: 0 0 50px 5px #f00;
-	margin-top: -78px;
-	margin-left: -80px;
 	opacity: 0;
-	z-index: 10;
+	transform-origin: center right;
 }
 
-#portfolio {
-	background-image: url('../img/portfolio.jpeg');
+.draw-beam { animation: drawBeam 1s linear forwards; }
+.undraw-beam { animation: undrawBeam 1s linear forwards; }
+
+@keyframes drawBeam {
+	0% { width: 0; }
+	100% { width: 100%; }
 }
 
-#about {
-	background-image: url('../img/about-me.jpg');
-}
-
-#contact {
-	background-image: url('../img/contact.jpg');
-}
-
-/* Animations */
-.open-link {
-	animation: openLink 0.5s linear 1s forwards;
-}
-
-.close-link {
-	animation: closeLink 0.5s linear forwards;
-}
-
-@keyframes openLink {
-	0% { transform: scale(0); opacity: 1; }
-	100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes closeLink {
-	0% { transform: scale(1); opacity: 1; }
-	100% { transform: scale(0); opacity: 1; }
-}
-
-/* ================================================= */
-/* ================= Media Queries ================= */
-/* ================================================= */
-
-@media screen and (max-width: 1100px) {
-	h2.title {
-		font-size: 90%;
-		bottom: 10px;
-		left: 80px;
-	}
-
-  .link {
-  	width: 130px;
-		height: 130px;
-		margin-top: -68px;
-		margin-left: -70px;
-  }
-}
-
-@media screen and (max-width: 962px) {
-	h1 {
-  	font-size: 130%;
-  }
-
-  p {
-  	font-size: 90%;
-  }
-
-  @keyframes drawTop {
-		0% { width: 0; }
-		100% { width: 90%; }
-	}
-
-	@keyframes drawMid {
-		0% { width: 0; }
-		100% { width: 65%; }
-	}
-
-	@keyframes drawBottom {
-		0% { width: 0; }
-		100% { width: 40%; }
-	}
-}
-
-@media screen and (max-width: 640px) {
-  h1 {
-  	font-size: 120%;
-  }
-
-  p {
-  	font-size: 90%;
-  }
-
-  .container {
-  	width: 75%;
-  	top: 50%;
-  	left: 50%;
-  	transform: translate(-55%, -50%);
-  }
-
-  @keyframes drawTop {
-		0% { width: 0; }
-		100% { width: 65%; }
-	}
-
-	@keyframes drawMid {
-		0% { width: 0; }
-		100% { width: 65%; }
-	}
-
-	@keyframes drawBottom {
-		0% { width: 0; }
-		100% { width: 65%; }
-	}
+@keyframes undrawBeam {
+	0% { width: 100%; }
+	100% { width: 0; }
 }
