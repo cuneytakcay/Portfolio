@@ -5,7 +5,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 html, body {
@@ -48,10 +47,10 @@ p {
 
 .container {
 	display: inline-block;
-	width: 90%;
-	height: 550px;
+	width: 80%;
+	height: 500px;
 	position: relative;
-	top: 100px;
+	top: 125px;
 	left: 50%;
   transform: translate(-50%);
 }
@@ -73,11 +72,12 @@ p {
 	top: 50%;
 	left: 0;
 	transform: translate(0, -50%);
-	width: 90%;
+	width: 100%;
 	text-align: right;
 }
 
-#h2-portfolio { margin:0 0 5px 0; }
+#h2-home { margin:0 0 5px 0; }
+#h2-portfolio,
 #h2-about-me, 
 #h2-contact { margin: 50px 0 5px 0; }
 
@@ -95,28 +95,63 @@ p {
 
 .link:focus { outline: none; }
 
-/* Beam Animation */
-.beam {
+/* ========= Content Animation ========= */
+.image {
+	background-image: url('../img/about-me.jpg');
+	background-position: center;
+	background-size: cover;
 	position: absolute;
-	right: 0;
+	top: 0;
+	left: 0;
+	height: 100%;
 	width: 0;
-	height: 3px;
-	border-radius: 5px;
-	background: #fff;
-	box-shadow: 0 0 50px 5px #f00;
-	opacity: 0;
-	transform-origin: center right;
 }
 
-.draw-beam { animation: drawBeam 1s linear forwards; }
-.undraw-beam { animation: undrawBeam 1s linear forwards; }
+.show-image { animation: showImage 0.8s ease-in-out 2s forwards; }
 
-@keyframes drawBeam {
+@keyframes showImage {
 	0% { width: 0; }
-	100% { width: 100%; }
+	100% { width: 40%; }
 }
 
-@keyframes undrawBeam {
-	0% { width: 100%; }
-	100% { width: 0; }
+.content {
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	left: 40%;
+	height: 100%;
+	width: 0;
+}
+
+.show-content { animation: showContent 1.2s ease-in-out 2.8s forwards; }
+
+@keyframes showContent {
+	0% { width: 0; }
+	100% { width: 60%; }
+}
+
+.content-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	width: 0;
+	border: 2px solid #fff;
+	box-shadow: 0 0 50px #fff;
+	opacity: 0;
+	z-index: -10;
+}
+
+.draw-box { animation: drawBox 2s ease-in-out forwards; }
+
+@keyframes drawBox {
+	0% { height: 0; width: 0; }
+	60% { height: 0; width: 88%; }
+	100% { height: 100%; width: 88%;	}
+}
+
+.jpulse {
+	position: absolute;
+	top: 0;
+	left:0;
 }

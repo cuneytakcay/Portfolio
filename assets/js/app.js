@@ -1,12 +1,10 @@
-// --------------------------------------------- //
-// -------------- BEAMS ANIMATE ---------------- //
-// --------------------------------------------- //
-
 $('.link').on('click', function(){
 	const id = $(this).attr('id')
-	$(`#${id}-beam`).removeClass('undraw-beam').addClass('draw-beam')
-	$('.beam').css('opacity', '1')
-	setTimeout(() => {
-		$(`#${id}-beam`).removeClass('draw-beam').addClass('undraw-beam')
-	}, 2000)
+
+	$('.tagline').css('opacity', '0')
+	$('.content-box').css('opacity', '1')
+	$('.content-box').addClass('draw-box')
+	$('.image').addClass('show-image')
+	$('.content').addClass('show-content')
 })
+
