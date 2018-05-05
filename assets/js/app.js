@@ -1,5 +1,3 @@
-const home = null
-
 const aboutme = `
 	<p>Hello! My name is Cuneyt- just say June-8 to nail your pronunciation!</p><br>
 
@@ -30,33 +28,37 @@ const contact = `
 
 $('.link').on('click', function(){
 	const id = $(this).attr('id')
-	let content = null;
 
 	switch (id) {
 		case 'home':
-			content = home
+			goToHome()
 			break
 		case 'aboutme':
-			content = aboutme
+			goToLink(id, aboutme)
 			break
 		case 'portfolio':
-			content = portfolio
+			goToLink(id, portfolio)
 			break
 		case 'contact':
-			content = contact
+			goToLink(id, contact)
 			break
 	}
+})
 
+const goToLink = (id, link) => {
 	$('.tagline').css('opacity', '0')
 	$('.content-box').css('opacity', '1')
 	$('.content-box').addClass('draw-box')
 	$('.image').css('background-image', `url("assets/img/${id}.jpg")`).addClass('show-image')
 	$('.content').addClass('show-content')
-	$('#material').html(content)
+	$('#material').html(link)
 	setTimeout(() => {
 		$('#material').css('display', 'block')
 		$('#material').addClass('display-material')
 	}, 2300)
+}
 
-})
+const goToHome = () => {
+	$('.tagline').css('opacity', '1')
+}
 
