@@ -38,19 +38,28 @@ p {
 	font-size: 100%;
 	letter-spacing: 1px;
 	line-height: 140%;
-	color: #a6a6a6;
+	color: #fff9e6;
 }
 
 /* ================================================= */
 /* ================= Main Content ================== */
 /* ================================================= */
+.header {
+	box-shadow: 0 0 30px #555;
+	text-align: center;
+}
+
+.header>h2 {
+	padding: 30px;
+	font-size: 120%;
+}
 
 .container {
 	display: inline-block;
 	width: 80%;
 	height: 500px;
 	position: relative;
-	top: 125px;
+	top: 50px;
 	left: 50%;
   transform: translate(-50%);
 }
@@ -83,21 +92,20 @@ p {
 
 .link {
 	text-decoration: none;
-	color: #fff;
-	opacity: 0.6;
+	color: #f55;
+	opacity: 0.4;
 }
 
 .link:hover,
 .link:active {
 	opacity: 1;
-	text-shadow: 0 0 30px #fff;
+	text-shadow: 0 0 30px #f00;
 }
 
 .link:focus { outline: none; }
 
 /* ========= Content Animation ========= */
 .image {
-	background-image: url('../img/about-me.jpg');
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -107,7 +115,7 @@ p {
 	width: 0;
 }
 
-.show-image { animation: showImage 0.8s ease-in-out 2s forwards; }
+.show-image { animation: showImage 1s ease 1.5s forwards; }
 
 @keyframes showImage {
 	0% { width: 0; }
@@ -115,19 +123,12 @@ p {
 }
 
 .content {
-	background-color: #fff;
 	position: absolute;
 	top: 0;
 	left: 40%;
 	height: 100%;
-	width: 0;
-}
-
-.show-content { animation: showContent 1.2s ease-in-out 2.8s forwards; }
-
-@keyframes showContent {
-	0% { width: 0; }
-	100% { width: 60%; }
+	width: 60%;
+	overflow: auto;
 }
 
 .content-box {
@@ -136,22 +137,32 @@ p {
 	left: 0;
 	height: 0;
 	width: 0;
-	border: 2px solid #fff;
-	box-shadow: 0 0 50px #fff;
+	border: 1px solid #f55;
+	box-shadow: 0 0 50px #f00;
+	background-color: rgba(0, 0, 0, 0.1);
 	opacity: 0;
 	z-index: -10;
 }
 
-.draw-box { animation: drawBox 2s ease-in-out forwards; }
+.draw-box { animation: drawBox 1.5s ease-out forwards; }
 
 @keyframes drawBox {
 	0% { height: 0; width: 0; }
-	60% { height: 0; width: 88%; }
+	30% { height: 0; width: 88%; }
 	100% { height: 100%; width: 88%;	}
 }
 
-.jpulse {
-	position: absolute;
-	top: 0;
-	left:0;
+#material {
+	display: none;
+	opacity: 0;
+	font-size: 90%;
+	padding: 30px 40px;
 }
+
+.display-material { animation: displayMaterial 1s ease-out forwards; }
+
+@keyframes displayMaterial {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
