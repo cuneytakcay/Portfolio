@@ -18,8 +18,15 @@ const aboutme = `
 
 const portfolio = null
 
-const contact = null
-
+const contact = `
+	<form id="contact-form" method="post" action="mailer.php">
+		<input type="text" name="name" id="name" placeholder="Your name...">
+		<input type="email" name="email" id="email" placeholder="Your email...">
+		<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
+		<button type="submit">Submit</button>
+		<div id="message-result"></div>
+	</form>
+`
 
 $('.link').on('click', function(){
 	const id = $(this).attr('id')
