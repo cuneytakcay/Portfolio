@@ -28,6 +28,8 @@ const contact = `
 	</form>
 `
 
+let linkIsOpen = false
+
 $('.link').on('click', function(){
 	const id = $(this).attr('id')
 
@@ -41,34 +43,50 @@ $('.link').on('click', function(){
 			goToLink(id, aboutme)
 			$('#home, #portfolio, #contact').removeClass('active').addClass('link')
 			$('#aboutme').addClass('active').removeClass('link')
+			linkIsOpen = true
 			break
 		case 'portfolio':
 			goToLink(id, portfolio)
 			$('#home, #aboutme, #contact').removeClass('active').addClass('link')
 			$('#portfolio').addClass('active').removeClass('link')
+			linkIsOpen = true
 			break
 		case 'contact':
 			goToLink(id, contact)
 			$('#home, #portfolio, #aboutme').removeClass('active').addClass('link')
 			$('#contact').addClass('active').removeClass('link')
+			linkIsOpen = true
 			break
 	}
 })
 
 const goToLink = (id, link) => {
-	$('.tagline').fadeOut(500)
-	$('.content-box').css('display', 'block').addClass('draw-box')
-	$('.image').fadeIn().css('background-image', `url("assets/img/${id}.jpg")`).addClass('show-image')
-	$('.material').fadeIn().html(link)
-	setTimeout(() => {
-		$('#content').fadeIn(2000)
-	}, 2300)
+	if (linkIsOpen) {
+		$('.content-box').css('box-shadow', 'none')
+		$('.image, .material, .content-box').fadeOut(1000)
+		setTimeout(() => {
+			$('.content-box').css('display', 'block').addClass('draw-box')
+			$('.image').fadeIn().css('background-image', `url("assets/img/${id}.jpg")`).addClass('show-image')
+			$('.material').fadeIn().html(link)
+			setTimeout(() => {
+				$('#content').fadeIn(2000)
+			}, 2300)
+		}, 2000)
+	} else {
+		$('.tagline').fadeOut(500)
+		$('.content-box').css('display', 'block').addClass('draw-box')
+		$('.image').fadeIn().css('background-image', `url("assets/img/${id}.jpg")`).addClass('show-image')
+		$('.material').fadeIn().html(link)
+		setTimeout(() => {
+			$('#content').fadeIn(2000)
+		}, 2300)
+	}
 }
 
 const goToHome = () => {
 	$('.content-box').css('box-shadow', 'none')
 	$('.image, .material, .content-box').fadeOut(1000, () => {
 		$('.tagline').fadeIn(1000)
-	});
+	})
 }
 
