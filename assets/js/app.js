@@ -62,8 +62,7 @@ $('.link').on('click', function(){
 
 const goToLink = (id, link) => {
 	if (linkIsOpen) {
-		$('.content-box').css('box-shadow', 'none')
-		$('.image, .material, .content-box').fadeOut(1000)
+		$('.image, .material, .content-box').fadeOut(500)
 		setTimeout(() => {
 			$('.content-box').css('display', 'block').addClass('draw-box')
 			$('.image').fadeIn().css('background-image', `url("assets/img/${id}.jpg")`).addClass('show-image')
@@ -71,7 +70,7 @@ const goToLink = (id, link) => {
 			setTimeout(() => {
 				$('#content').fadeIn(2000)
 			}, 2300)
-		}, 2000)
+		}, 600)
 	} else {
 		$('.tagline').fadeOut(500)
 		$('.content-box').css('display', 'block').addClass('draw-box')
@@ -84,9 +83,9 @@ const goToLink = (id, link) => {
 }
 
 const goToHome = () => {
-	$('.content-box').css('box-shadow', 'none')
-	$('.image, .material, .content-box').fadeOut(1000, () => {
+	$('.image, .material, .content-box').fadeOut(500, () => {
 		$('.tagline').fadeIn(1000)
 	})
+	linkIsOpen = false;
 }
 

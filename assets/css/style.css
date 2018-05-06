@@ -145,8 +145,8 @@ a:focus { outline: none; }
 	height: 0;
 	width: 0;
 	border: 1px solid #f55;
-	box-shadow: 0 0 50px #f00;
-	background-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 40px #f00;
+	background-color: rgba(50, 0, 0, 0.1);
 	display: none;
 }
 
