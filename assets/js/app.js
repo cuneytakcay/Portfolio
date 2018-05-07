@@ -16,14 +16,28 @@ const aboutme = `
 	</div>
 `
 
-const portfolio = null
+const portfolio = `
+	<div id="content" style="display:none;">
+		<div class="portfolio"><img src="assets/img/portfolio/skilltrade.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/shifter.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/nyt.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/articlescraper.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/nefisburger.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/couplemaker.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/restaurantroulette.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/giphy.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/trivia.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/heman.png"></div>
+		<div class="portfolio"><img src="assets/img/portfolio/hangman.png"></div>
+	</div>
+`
 
 const contact = `
 	<form id="content" method="post" action="mailer.php" style="display:none;">
 		<input type="text" name="name" id="name" placeholder="Your name...">
 		<input type="email" name="email" id="email" placeholder="Your email...">
 		<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
-		<button type="submit">Submit</button>
+		<button type="submit">Send</button>
 		<div id="message-result"></div>
 	</form>
 `
