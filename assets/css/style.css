@@ -54,7 +54,7 @@ a:focus { outline: none; }
 .header {
 	border-bottom:2px solid rgba(255, 0, 0, 0.3);
 	height: 70px;
-	margin-bottom: 4%;
+	margin-bottom: 35px;
 }
 
 .logo {
@@ -258,13 +258,13 @@ button:focus {
 /* ================================================= */
 
 .footer {
-	text-align: center;
-	padding: 1.5% 0 0.5% 0;
+	display: flex;
+	justify-content: center;
 }
 
 i.fa {
 	font-size: 200%;
-	margin: 0 10px;
+	margin: 10px 20px;
 	color: #f00;
 	opacity: 0.5;
 }
@@ -307,25 +307,28 @@ i:hover {
 
 }
 
+/* ------------ Smaller than 480px ----------- */
 @media screen and (max-width: 480px) {
+	h3 { font-size: 85%; }
+
 	.logo {
-		left: 10px;
+		/*left: 10px;*/
 		top: 10px;
 		width: 60px;
-		transform: none;
+		/*transform: none;*/
 	}
 
 	.links {
+		display: flex;
+		justify-content: space-around;
 		position: static;
-		text-align: center;
 	}
 
 	#link-home,
 	#link-portfolio,
 	#link-about-me, 
 	#link-contact { 
-		display: inline-block;
-		margin: 10% 4% 5% 4%; 
+		margin: 0; 
 	}
 
 	.tagline {
@@ -333,17 +336,28 @@ i:hover {
 		left: 50%;
 	}
 	
-	.content-box { top: 65px; }
+	.content-box { top: 7%; }
+
+	.material {
+		left: 0;
+		width: 100%;
+		font-size: 100%;
+	}
 
 	@keyframes drawBox {
-	0% { height: 0; width: 0; }
-	30% { height: 85%; width: 0; }
-	100% { height: 85%; width: 100%;	}
+		0% { height: 0; width: 0; }
+		30% { height: 90%; width: 0; }
+		100% { height: 90%; width: 100%;	}
+	}
 
 	@keyframes showImage {
-	0% { width: 0; }
-	100% { width: 100%; }
+		0% { width: 0; }
+		100% { width: 100%; }
+	}
+
+	i.fa { margin: 10px 15px; }
 }
 
-	i.fa { margin: 15px; } /*PROBLEM!*/
+@media screen and (max-width: 370px) {
+	h3 { font-size: 75%; }
 }
