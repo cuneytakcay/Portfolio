@@ -12,7 +12,7 @@ body {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 20px;
 	background-color: #000;
-	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../img/dark-bg.png');
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('../img/dark-bg.png');
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
@@ -60,7 +60,7 @@ a:focus { outline: none; }
 .logo {
 	position: absolute;
 	left: 50%;
-	top: 30px;
+	top: 20px;
 	transform: translate(-50%);
 	width: 75px;
 }
@@ -178,6 +178,12 @@ a:focus { outline: none; }
 	overflow: auto;
 	font-size: 85%;
 	padding: 30px 40px;
+	display: flex;
+	flex-direction: column;
+}
+
+#content {
+	flex: 1 auto;
 }
 
 /* ------------- Home page ------------ */
@@ -278,6 +284,7 @@ i:hover {
 /* ================== Media Queries ================ */
 /* ================================================= */
 
+/* ------------ Smaller than 1224px ----------- */
 @media screen and (max-width: 1224px){
 	h1 { font-size: 160%; }
 
@@ -292,30 +299,28 @@ i:hover {
 	.material { font-size: 80%; }
 }
 
+/* ------------ Smaller than 1024px ----------- */
 @media screen and (max-width: 1024px){
 	h1 { font-size: 150%; }
 
 	h3 { font-size: 90%; }
 
-	.container { width: 90%; }
+	.container { width: 95%; }
 
 	.tagline>p { font-size: 100%; }
 
 }
 
-@media screen and (max-width: 768px){
+/* ------------ Smaller than 900px ----------- */
+@media screen and (max-width: 900px){
+	h1 { font-size: 140%; }
 
-}
-
-/* ------------ Smaller than 480px ----------- */
-@media screen and (max-width: 480px) {
-	h3 { font-size: 85%; }
+	h3 { font-size: 95%; }
+	
+	.container { width: 70%; }
 
 	.logo {
-		/*left: 10px;*/
-		top: 10px;
-		width: 60px;
-		/*transform: none;*/
+		top: 5px;
 	}
 
 	.links {
@@ -341,7 +346,13 @@ i:hover {
 	.material {
 		left: 0;
 		width: 100%;
-		font-size: 100%;
+		font-size: 90%;
+		padding: 0;
+	}
+
+	#content { 
+		padding: 30px;
+		background-color: rgba(0, 0, 0, 0.7);
 	}
 
 	@keyframes drawBox {
@@ -358,6 +369,26 @@ i:hover {
 	i.fa { margin: 10px 15px; }
 }
 
+/* ------------ Smaller than 768px ----------- */
+@media screen and (max-width: 768px) {
+	h3 { font-size: 85%; }
+
+	.container { width: 75%; }
+
+	.logo {
+		/*left: 10px;*/
+		top: 10px;
+		width: 60px;
+		/*transform: none;*/
+	}
+}
+
+/* ------------ Smaller than 480px ----------- */
+@media screen and (max-width: 480px) {
+	.container { width: 90%; }
+}
+
+/* ------------ Smaller than 370px ----------- */
 @media screen and (max-width: 370px) {
 	h3 { font-size: 75%; }
 }
