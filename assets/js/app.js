@@ -1,6 +1,6 @@
 const aboutme = `
 	<div id="content" style="display:none;">
-		<h3>About me</h3><br>
+		<h2>About me</h2><br>
 		<p>Hello! My name is Cuneyt- just say June-8 to nail your pronunciation!</p><br>
 
 		<p>Chemistry was my specialty in college, and in my career I've taught science 
@@ -19,7 +19,7 @@ const aboutme = `
 
 const portfolio = `
 	<div id="content" style="display:none;">
-		<h3>Projects</h3>
+		<h2>Projects</h2>
 		<a href="http://serene-oasis-24845.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/skilltrade.png" alt="skilltrade app"></div>
 		</a>
@@ -58,7 +58,7 @@ const portfolio = `
 
 const contact = `
 	<div id="content" style="display:none;">
-		<h3>Contact me</h3>
+		<h2>Contact me</h2>
 		<form method="post" action="mailer.php">
 			<input type="text" name="name" id="name" placeholder="Your name...">
 			<input type="email" name="email" id="email" placeholder="Your email...">
