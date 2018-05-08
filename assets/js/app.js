@@ -1,5 +1,6 @@
 const aboutme = `
 	<div id="content" style="display:none;">
+		<h3>About me</h3><br>
 		<p>Hello! My name is Cuneyt- just say June-8 to nail your pronunciation!</p><br>
 
 		<p>Chemistry was my specialty in college, and in my career I've taught science 
@@ -18,28 +19,54 @@ const aboutme = `
 
 const portfolio = `
 	<div id="content" style="display:none;">
-		<div class="portfolio"><img src="assets/img/portfolio/skilltrade.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/shifter.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/nyt.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/articlescraper.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/nefisburger.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/couplemaker.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/restaurantroulette.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/giphy.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/trivia.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/heman.png"></div>
-		<div class="portfolio"><img src="assets/img/portfolio/hangman.png"></div>
+		<h3>Projects</h3>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/skilltrade.png" alt="skilltrade app"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/shifter.png" alt="shifter app"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/nyt.png" alt="nyt article search"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/articlescraper.png" alt="article scraper"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/nefisburger.png" alt="nefis burger"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/couplemaker.png" alt="couplemaker"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/restaurantroulette.png" alt="restaurant roulette app"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/giphy.png" alt="gif search engine"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/trivia.png" alt="trivia game"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/heman.png" alt="he-man rpg game"></div>
+		</a>
+		<a href="#" target="_blank">
+			<div class="portfolio"><img src="assets/img/portfolio/hangman.png" alt="hangman game"></div>
+		</a>
 	</div>
 `
 
 const contact = `
-	<form id="content" method="post" action="mailer.php" style="display:none;">
-		<input type="text" name="name" id="name" placeholder="Your name...">
-		<input type="email" name="email" id="email" placeholder="Your email...">
-		<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
-		<button type="submit">Send</button>
-		<div id="message-result"></div>
-	</form>
+	<div id="content" style="display:none;">
+		<h3>Contact me</h3>
+		<form method="post" action="mailer.php">
+			<input type="text" name="name" id="name" placeholder="Your name...">
+			<input type="email" name="email" id="email" placeholder="Your email...">
+			<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
+			<button type="submit">Send</button>
+			<div id="message-result"></div>
+		</form>
+	</div>
 `
 
 let linkIsOpen = false
