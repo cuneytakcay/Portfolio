@@ -20,37 +20,37 @@ const aboutme = `
 const portfolio = `
 	<div id="content" style="display:none;">
 		<h3>Projects</h3>
-		<a href="#" target="_blank">
+		<a href="http://serene-oasis-24845.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/skilltrade.png" alt="skilltrade app"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://serene-castle-95327.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/shifter.png" alt="shifter app"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://quiet-ravine-19580.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/nyt.png" alt="nyt article search"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://peaceful-inlet-85002.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/articlescraper.png" alt="article scraper"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://glacial-retreat-34307.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/nefisburger.png" alt="nefis burger"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://shielded-castle-38951.herokuapp.com/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/couplemaker.png" alt="couplemaker"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://heyjaypray.github.io/pick4.io/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/restaurantroulette.png" alt="restaurant roulette app"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://cuneytakcay.github.io/GifTastic/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/giphy.png" alt="gif search engine"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://cuneytakcay.github.io/TriviaGame/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/trivia.png" alt="trivia game"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://cuneytakcay.github.io/week-4-game/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/heman.png" alt="he-man rpg game"></div>
 		</a>
-		<a href="#" target="_blank">
+		<a href="http://cuneytakcay.github.io/Hangman-Game/" target="_blank">
 			<div class="portfolio"><img src="assets/img/portfolio/hangman.png" alt="hangman game"></div>
 		</a>
 	</div>
