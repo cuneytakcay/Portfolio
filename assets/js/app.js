@@ -131,7 +131,7 @@ const goToHome = () => {
 }
 
 // Contact form submit script
-$('#form-btn').on('click', event => {
+$(document).on('click', '#form-btn', event => {
   event.preventDefault()
 	$.ajax({
 	    type: 'POST',
