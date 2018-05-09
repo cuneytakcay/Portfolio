@@ -365,6 +365,23 @@ i:hover {
 		100% { width: 100%; }
 	}
 
+	input, textarea {	
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	button {
+		background-color: rgba(255, 75, 75, 0.6);
+	}
+
+	button:hover {
+		background-color: rgba(255, 75, 75, 0.8);
+	}
+
+	input:focus,
+	textarea:focus { 
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
 	i.fa { margin: 10px 15px; }
 }
 
