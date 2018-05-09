@@ -63,7 +63,7 @@ const contact = `
 			<input type="text" name="name" id="name" placeholder="Your name...">
 			<input type="email" name="email" id="email" placeholder="Your email...">
 			<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
-			<button type="submit">Send</button>
+			<button type="submit" id="form-btn">Send</button>
 			<div id="message-result"></div>
 		</form>
 	</div>
@@ -131,7 +131,7 @@ const goToHome = () => {
 }
 
 // Contact form submit script
-$('#contact-form').submit(event => {
+$('#form-btn').on('click', event => {
   event.preventDefault()
 	$.ajax({
 	    type: 'POST',
