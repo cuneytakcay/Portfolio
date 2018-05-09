@@ -59,7 +59,7 @@ const portfolio = `
 const contact = `
 	<div id="content" style="display:none;">
 		<h2>Contact me</h2>
-		<form method="post" action="mailer.php">
+		<form id="contact-form" method="post" action="mailer.php">
 			<input type="text" name="name" id="name" placeholder="Your name...">
 			<input type="email" name="email" id="email" placeholder="Your email...">
 			<textarea name="message" id="message" placeholder="Your message..." rows="6"></textarea>	
@@ -129,4 +129,25 @@ const goToHome = () => {
 	})
 	linkIsOpen = false;
 }
+
+// Contact form submit script
+$('#contact-form').submit(event => {
+  event.preventDefault()
+	$.ajax({
+	    type: 'POST',
+	    url: 'mailer.php',
+	    data: {
+	    	name: $('#name').val(),
+	    	email: $('#email').val(),
+	    	message: $('#message').val()
+	    }
+	}).done(response => {
+	    $('#message-result').html(`<p><em>${response}</em></p>`)
+	    $('#name').val('')
+	    $('#email').val('')
+	    $('#message').val('')
+	}).fail(data => {
+	    $('#message-result').html(`<p><em>An error occured and your message could not be sent!</em></p>`)
+	})
+})
 

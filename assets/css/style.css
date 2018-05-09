@@ -35,7 +35,6 @@ h3 {
 	font-family: 'Prosto One', cursive;
 	font-size: 100%;
 	color: #fff;
-	text-shadow: 0 0 5px #f00;
 }
 
 p {
@@ -60,7 +59,7 @@ a:focus { outline: none; }
 .logo {
 	position: absolute;
 	left: 50%;
-	top: 20px;
+	top: 25px;
 	transform: translate(-50%);
 	width: 75px;
 }
@@ -270,7 +269,7 @@ button:focus {
 
 i.fa {
 	font-size: 200%;
-	margin: 10px 20px;
+	margin: 15px 20px 10px 20px;
 	color: #f00;
 	opacity: 0.5;
 }
@@ -358,7 +357,7 @@ i:hover {
 	@keyframes drawBox {
 		0% { height: 0; width: 0; }
 		30% { height: 90%; width: 0; }
-		100% { height: 90%; width: 100%;	}
+		100% { height: 90%; width: 100%; }
 	}
 
 	@keyframes showImage {
