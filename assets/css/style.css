@@ -99,12 +99,12 @@ a:focus { outline: none; }
 .links {
 	position: absolute;
 	top: 50%;
-	left: 0;
+	right: 0;
 	-webkit-transform: translate(0, -50%);
 	    -ms-transform: translate(0, -50%);
 	        transform: translate(0, -50%);
-	width: 100%;
 	text-align: right;
+	display: inline-block;
 }
 
 #home { margin:0 0 5px 0; }
