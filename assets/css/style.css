@@ -91,14 +91,15 @@ a:focus { outline: none; }
 	text-align: right;
 }
 
-#link-home { margin:0 0 5px 0; }
-#link-portfolio,
-#link-about-me, 
-#link-contact { margin: 35px 0 5px 0; }
+#home { margin:0 0 5px 0; }
+#portfolio,
+#aboutme, 
+#contact { margin: 35px 0 5px 0; }
 
 .link {
 	color: #fff;
 	opacity: 0.6;
+	cursor: pointer;
 }
 
 .link:hover {
@@ -328,10 +329,10 @@ i:hover {
 		position: static;
 	}
 
-	#link-home,
-	#link-portfolio,
-	#link-about-me, 
-	#link-contact { 
+	#home,
+	#portfolio,
+	#aboutme, 
+	#contact { 
 		margin: 0; 
 	}
 
