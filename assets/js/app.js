@@ -4,7 +4,7 @@ const aboutme = `
 		<p>Hello! My name is Cuneyt- just say June-8 to nail your pronunciation!</p><br>
 
 		<p>Chemistry was my specialty in college, and in my career I've taught science 
-		and technology classes, but now it's time for a change. I have completed the 
+		and technology classes, and finally, I have completed the 
 		University of Arizona Coding Bootcamp to become a full stack web developer. 
 		It has been incredible to see how much I've managed to learn and grow in 6 months, 
 		and I cannot wait to use my programming skills in a professional field to make a 
@@ -130,10 +130,29 @@ const goToHome = () => {
 	linkIsOpen = false;
 }
 
+const validateForm = () => {
+	let result = true
+
+	if ($('#name').val() === '') {
+		result = false;
+	}
+
+	if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/).test($('#email').val())) {
+		result = false;
+	}
+
+	if ($('#message').val() === '') {
+		result = false;
+	}
+
+	return result
+}
+
 // Contact form submit script
 $(document).on('click', '#form-btn', event => {
   event.preventDefault()
-	$.ajax({
+  if (validateForm()) {
+  	$.ajax({
 	    type: 'POST',
 	    url: 'mailer.php',
 	    data: {
@@ -141,13 +160,17 @@ $(document).on('click', '#form-btn', event => {
 	    	email: $('#email').val(),
 	    	message: $('#message').val()
 	    }
-	}).done(response => {
-	    $('#message-result').html(`<p><em>${response}</em></p>`)
-	    $('#name').val('')
-	    $('#email').val('')
-	    $('#message').val('')
-	}).fail(data => {
-	    $('#message-result').html(`<p><em>An error occured and your message could not be sent!</em></p>`)
-	})
+		}).done(response => {
+		    $('#message-result').html(`<p><em>${response}</em></p>`)
+		    $('#name').val('')
+		    $('#email').val('')
+		    $('#message').val('')
+		}).fail(data => {
+		    $('#message-result').html(`<p><em>An error occured and your message could not be sent!</em></p>`)
+		})
+  } else {
+  	$('#message-result').html(`<p style="color:#b00;"><em>Please make sure all fields are completed correctly.</em></p>`)
+  }
+	
 })
 
