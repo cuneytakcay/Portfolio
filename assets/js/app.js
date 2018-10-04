@@ -127,18 +127,18 @@ const goToHome = () => {
 	$('.image, .material, .content-box').fadeOut(500, () => {
 		$('.tagline').fadeIn(1000)
 	})
-	linkIsOpen = false;
+	linkIsOpen = false
 }
 
 const validateForm = () => {
 	let result = true
 
 	if ($('#name').val() === '') {
-		result = false;
+		result = false
 	}
 
 	if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/).test($('#email').val())) {
-		result = false;
+		result = false
 	}
 
 	if ($('#message').val() === '') {
@@ -147,6 +147,18 @@ const validateForm = () => {
 
 	return result
 }
+
+// The theme of the change will change here
+$('.theme-toggler').on('click', event => {
+	event.preventDefault()
+
+	$('body').toggleClass('light-theme')
+	if ($('body').attr('class') === 'light-theme') {
+		$('.theme-toggler>p').html('<i class="i-theme fas fa-moon"></i>')
+	} else {
+		$('.theme-toggler>p').html('<i class="i-theme fas fa-sun"></i>')
+	}
+})
 
 // Contact form submit script
 $(document).on('click', '#form-btn', event => {
