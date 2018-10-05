@@ -154,9 +154,9 @@ $('.theme-toggler').on('click', event => {
 
 	$('body').toggleClass('light-theme')
 	if ($('body').attr('class') === 'light-theme') {
-		$('.theme-toggler>p').html('<i class="i-theme fas fa-moon"></i>')
+		$('.theme-toggler>p').html('<i class="i-theme fas fa-lightbulb"></i>')
 	} else {
-		$('.theme-toggler>p').html('<i class="i-theme fas fa-sun"></i>')
+		$('.theme-toggler>p').html('<i class="i-theme far fa-lightbulb"></i>')
 	}
 })
 
